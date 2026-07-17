@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dswj1trfed3h6"]
+
+[ext_resource type="Texture2D" uid="uid://cdldgod3yrs6l" path="res://assets/sprites/decorations/Mossy_-_Decorations_Hazards_004.png" id="1_p4bnf"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_fvtrv"]
+points = PackedVector2Array(24, 11, 1, 0, -18, 11, -36, 2, -32, -6, -12, -9, -2, -14, 14, -14, 16, -5, 36, 2)
+
+[node name="Spike" type="Area2D" unique_id=989408582]
+collision_layer = 2
+collision_mask = 32
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1029825667]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_p4bnf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397559979]
+position = Vector2(0, 2)
+shape = SubResource("ConvexPolygonShape2D_fvtrv")

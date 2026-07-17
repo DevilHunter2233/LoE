@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bvqehk8drkbep"]
+
+[ext_resource type="PackedScene" uid="uid://cvk56yifoxieo" path="res://scenes/characters/Leesha.tscn" id="1_86d4f"]
+[ext_resource type="PackedScene" uid="uid://bowtgaowwb83e" path="res://scenes/enemies/RiftCreature.tscn" id="2_w20ko"]
+[ext_resource type="PackedScene" uid="uid://bbjfllsw5sic6" path="res://scenes/ui/hud.tscn" id="4_timdk"]
+
+[sub_resource type="Gradient" id="Gradient_86d4f"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w20ko"]
+gradient = SubResource("Gradient_86d4f")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86d4f"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_3wv3p"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_timdk"]
+gradient = SubResource("Gradient_3wv3p")
+
+[sub_resource type="Gradient" id="Gradient_j0sv7"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_buy1m"]
+gradient = SubResource("Gradient_j0sv7")
+
+[sub_resource type="Gradient" id="Gradient_timdk"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j0sv7"]
+gradient = SubResource("Gradient_timdk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buy1m"]
+size = Vector2(64, 64)
+
+[node name="TestLevel" type="Node2D" unique_id=1878465447]
+
+[node name="Leesha" parent="." unique_id=811869181 instance=ExtResource("1_86d4f")]
+position = Vector2(-298, 72)
+
+[node name="GROUND" type="Sprite2D" parent="." unique_id=75223737]
+position = Vector2(57.99998, 32.999996)
+scale = Vector2(6.7999988, 0.39999992)
+texture = SubResource("GradientTexture2D_w20ko")
+
+[node name="Ground" type="StaticBody2D" parent="GROUND" unique_id=493614476 groups=["terrain"]]
+
+[node name="ground" type="CollisionShape2D" parent="GROUND/Ground" unique_id=1949838006]
+shape = SubResource("RectangleShape2D_86d4f")
+
+[node name="PLATFORM1" type="Sprite2D" parent="." unique_id=1812005602]
+position = Vector2(-250, 104.00001)
+scale = Vector2(5.3514385, -0.42049798)
+texture = SubResource("GradientTexture2D_timdk")
+
+[node name="Platform1" type="StaticBody2D" parent="PLATFORM1" unique_id=424253394 groups=["terrain"]]
+
+[node name="platform1" type="CollisionShape2D" parent="PLATFORM1/Platform1" unique_id=78549255]
+position = Vector2(-0.18686867, 0)
+scale = Vector2(1, 0.9999999)
+shape = SubResource("RectangleShape2D_86d4f")
+
+[node name="PLATFORM2" type="Sprite2D" parent="." unique_id=1056722306]
+position = Vector2(292, -24)
+scale = Vector2(4.08, 0.46845135)
+texture = SubResource("GradientTexture2D_buy1m")
+
+[node name="Platform2" type="StaticBody2D" parent="PLATFORM2" unique_id=1372987845 groups=["terrain"]]
+
+[node name="platform2" type="CollisionShape2D" parent="PLATFORM2/Platform2" unique_id=976198558]
+shape = SubResource("RectangleShape2D_86d4f")
+
+[node name="RiftCreature" parent="." unique_id=1747424469 instance=ExtResource("2_w20ko")]
+position = Vector2(70, 0)
+
+[node name="RiftCreature2" parent="." unique_id=1644908950 instance=ExtResource("2_w20ko")]
+position = Vector2(70, 0)
+
+[node name="WALL" type="Sprite2D" parent="." unique_id=1917265577 groups=["terrain"]]
+position = Vector2(-444, 12)
+scale = Vector2(0.6687951, -3.2857318)
+texture = SubResource("GradientTexture2D_j0sv7")
+
+[node name="Wall" type="StaticBody2D" parent="WALL" unique_id=1923335778]
+
+[node name="wall" type="CollisionShape2D" parent="WALL/Wall" unique_id=432759743]
+shape = SubResource("RectangleShape2D_buy1m")
+
+[node name="HUD" parent="." unique_id=864944665 instance=ExtResource("4_timdk")]

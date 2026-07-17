@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bowtgaowwb83e"]
+
+[ext_resource type="Script" uid="uid://b5vh1wsafo4gh" path="res://scripts/enemies/rift_creature.gd" id="1_csxlo"]
+[ext_resource type="Texture2D" uid="uid://b6mlb46n18cox" path="res://scenes/enemies/Dragen-removebg-preview.png" id="1_hgg3k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lywb"]
+radius = 12.0
+height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nmpd3"]
+radius = 140.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgg3k"]
+
+[node name="RiftCreature" type="CharacterBody2D" unique_id=1747424469 groups=["enemies"]]
+script = ExtResource("1_csxlo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1300303775]
+shape = SubResource("CapsuleShape2D_4lywb")
+debug_color = Color(0.039475687, 0.553945, 0.9067711, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1563156019]
+scale = Vector2(0.081298195, 0.07897816)
+texture = ExtResource("1_hgg3k")
+
+[node name="DetectionZone" type="Area2D" parent="." unique_id=817844083]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone" unique_id=644955518]
+shape = SubResource("CircleShape2D_nmpd3")
+
+[node name="AttackHitBox" type="Area2D" parent="." unique_id=334873410]
+position = Vector2(17, 0)
+scale = Vector2(0.64311385, 0.67209905)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitBox" unique_id=433337274]
+shape = SubResource("RectangleShape2D_hgg3k")
+
+[node name="EdgeDetector" type="RayCast2D" parent="." unique_id=773306593]
+target_position = Vector2(-1, 39)
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=627407643]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -25.0
+offset_right = 15.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+show_percentage = false

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bbjfllsw5sic6"]
+
+[ext_resource type="Script" uid="uid://b6au3xiceo782" path="res://scenes/ui/hud.gd" id="1_0mwgc"]
+[ext_resource type="Texture2D" uid="uid://cnd2uu1q77qps" path="res://assets/sprites/ui/Leesha_HUD-Photoroom.png" id="2_h022r"]
+[ext_resource type="Texture2D" uid="uid://dvjlg34juupsl" path="res://assets/sprites/ui/Full_health.png" id="2_kicr4"]
+[ext_resource type="Texture2D" uid="uid://cuuuf7t24jy7w" path="res://assets/sprites/ui/VE_Background.png" id="3_4jqwt"]
+[ext_resource type="Texture2D" uid="uid://b2pa1b8mcdvqk" path="res://assets/sprites/ui/Half_Health.png" id="3_mj13f"]
+[ext_resource type="Texture2D" uid="uid://c2xovdkk680sw" path="res://assets/sprites/ui/VE_Front-Photoroom.png" id="4_kicr4"]
+[ext_resource type="Texture2D" uid="uid://du7akoj5huuy" path="res://assets/sprites/ui/Empty_Health.png" id="4_mj13f"]
+[ext_resource type="Texture2D" uid="uid://cijbili1wvwof" path="res://assets/sprites/ui/VE_Meter.png" id="5_mj13f"]
+[ext_resource type="Texture2D" uid="uid://c0rvoa2jowkwa" path="res://assets/sprites/ui/Energy_Background.png" id="6_0h1do"]
+[ext_resource type="Texture2D" uid="uid://rfjoskni5lxf" path="res://assets/sprites/ui/Energy_Front (1).png" id="7_4d46k"]
+[ext_resource type="Texture2D" uid="uid://dx68sa626h14" path="res://assets/sprites/ui/Energy_Meter.png" id="8_erw67"]
+
+[node name="HUD" type="CanvasLayer" unique_id=864944665]
+script = ExtResource("1_0mwgc")
+crystal_full = ExtResource("2_kicr4")
+crystal_half = ExtResource("3_mj13f")
+crystal_empty = ExtResource("4_mj13f")
+
+[node name="HudRoot" type="Control" parent="." unique_id=1312138486]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Portrait" type="TextureRect" parent="HudRoot" unique_id=764219852]
+texture_filter = 1
+layout_mode = 0
+offset_top = -1.0
+offset_right = 40.0
+offset_bottom = 39.0
+scale = Vector2(1, 1.4399996)
+texture = ExtResource("2_h022r")
+expand_mode = 2
+
+[node name="CrystalRow" type="HBoxContainer" parent="HudRoot" unique_id=1618703926]
+texture_filter = 1
+layout_mode = 1
+offset_left = 40.0
+offset_top = 6.0
+offset_right = 60.0
+offset_bottom = 26.0
+scale = Vector2(0.092, 0.1)
+theme_override_constants/separation = 4
+
+[node name="Crystal1" type="TextureRect" parent="HudRoot/CrystalRow" unique_id=151305410]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Crystal2" type="TextureRect" parent="HudRoot/CrystalRow" unique_id=781979736]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Crsytal3" type="TextureRect" parent="HudRoot/CrystalRow" unique_id=1098078074]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Crystal4" type="TextureRect" parent="HudRoot/CrystalRow" unique_id=1762979595]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Crystal5" type="TextureRect" parent="HudRoot/CrystalRow" unique_id=1509879217]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="VEBar" type="TextureProgressBar" parent="HudRoot" unique_id=609206049]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.000004
+offset_top = 30.000002
+offset_right = 619.0
+offset_bottom = 154.0
+scale = Vector2(0.16455616, 0.1580778)
+texture_under = ExtResource("3_4jqwt")
+texture_over = ExtResource("4_kicr4")
+texture_progress = ExtResource("5_mj13f")
+
+[node name="EnergyBar" type="TextureProgressBar" parent="HudRoot" unique_id=2107603878]
+texture_filter = 1
+layout_mode = 0
+offset_left = 40.0
+offset_top = 49.0
+offset_right = 626.0
+offset_bottom = 181.0
+scale = Vector2(0.16012882, 0.16365638)
+texture_under = ExtResource("6_0h1do")
+texture_over = ExtResource("7_4d46k")
+texture_progress = ExtResource("8_erw67")

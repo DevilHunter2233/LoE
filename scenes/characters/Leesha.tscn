@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cvk56yifoxieo"]
+
+[ext_resource type="Script" uid="uid://bnjwjrhiityuh" path="res://scripts/characters/Leesha.gd" id="1_1h7nj"]
+[ext_resource type="Texture2D" uid="uid://dpr6cpk1ovaxt" path="res://assets/sprites/Leeshaa.png" id="1_cyauc"]
+[ext_resource type="Script" uid="uid://beapav6xknt3v" path="res://scripts/objects/camera_controller.gd" id="2_faw5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyauc"]
+size = Vector2(9, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1h7nj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faw5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b524"]
+
+[node name="Leesha" type="CharacterBody2D" unique_id=811869181 groups=["player"]]
+collision_layer = 32
+script = ExtResource("1_1h7nj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1466050755]
+script = ExtResource("2_faw5f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1278188702]
+texture_filter = 1
+position = Vector2(-4, 0.9999999)
+scale = Vector2(0.033099394, 0.032069135)
+texture = ExtResource("1_cyauc")
+offset = Vector2(100, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640201123]
+shape = SubResource("RectangleShape2D_cyauc")
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=265111790]
+wait_time = 0.12
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=103308287]
+wait_time = 0.1
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="." unique_id=1624393356]
+wait_time = 0.6
+one_shot = true
+
+[node name="Dagger" type="Area2D" parent="." unique_id=1445719591]
+position = Vector2(15, 0)
+collision_layer = 32768
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dagger" unique_id=688131467]
+shape = SubResource("RectangleShape2D_1h7nj")
+
+[node name="Dagger2" type="Area2D" parent="." unique_id=367317841]
+position = Vector2(0, -29)
+collision_layer = 32768
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dagger2" unique_id=762667360]
+shape = SubResource("RectangleShape2D_faw5f")
+
+[node name="Dagger3" type="Area2D" parent="." unique_id=4273413]
+position = Vector2(0, 29)
+collision_layer = 32768
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dagger3" unique_id=764387735]
+shape = SubResource("RectangleShape2D_8ffqj")
+
+[node name="Dagger4" type="Area2D" parent="." unique_id=1070199072]
+position = Vector2(34, 0)
+scale = Vector2(2.9199991, 0.5600003)
+collision_layer = 32768
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dagger4" unique_id=1366850893]
+shape = SubResource("RectangleShape2D_5b524")

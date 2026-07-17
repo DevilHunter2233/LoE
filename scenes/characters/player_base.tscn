@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://deo5ssq67x168"]
+
+[ext_resource type="Script" uid="uid://bhem57egf7cfb" path="res://scripts/characters/player_base.gd" id="1_jwtwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwtwv"]
+
+[sub_resource type="Gradient" id="Gradient_jwtwv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_llrg6"]
+gradient = SubResource("Gradient_jwtwv")
+width = 32
+height = 32
+
+[node name="Player" type="CharacterBody2D" unique_id=74348504]
+script = ExtResource("1_jwtwv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1327039858]
+shape = SubResource("RectangleShape2D_jwtwv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=697482189]
+texture = SubResource("GradientTexture2D_llrg6")
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=760974936]
+wait_time = 0.12
+one_shot = true
+
+[node name="JumpBufferTimer" type="Timer" parent="." unique_id=2132016938]
+wait_time = 0.1
+one_shot = true
+
+[node name="DashCooldownTimer" type="Timer" parent="." unique_id=1172032742]
+wait_time = 0.6
+one_shot = true
